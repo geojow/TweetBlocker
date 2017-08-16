@@ -13,6 +13,13 @@ $(document).ready(function() {
 		hideTweets();
 	});
 
+	$(document).keypress(function(e) {
+		var text = $('#text-to-block').val();
+    if(e.which == 13 && text != '') {
+    	$('.block').click();
+    }
+});
+
 	function onLoadHideBlockedWords(blockedWordArray) {
 		var array = blockedWordArray;
 		chrome.tabs.query({
