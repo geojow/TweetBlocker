@@ -60,6 +60,7 @@ hr {
 	padding: 10px;
 	font-size: 10px;
 	font-weight: normal;
+	text-align: center;
 }
 #text-to-block {
 	text-align: center;
@@ -76,6 +77,9 @@ hr {
 	float: right;
 	background-color: #1da1f2;
 	color: white;
+}
+.redirect {
+	text-align: center;
 }
 input:focus, select:focus, textarea:focus, button:focus {
 	outline: none;

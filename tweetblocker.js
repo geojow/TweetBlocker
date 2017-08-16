@@ -40,16 +40,15 @@ function showText(blockText) {
 			$(this).css("display", "block");
 		};
 	})
-	
 }
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	console.log(sender.tab ? "from a content script:" + sender.tab.url : "from the extension");
 	if (request.type == "submit") {
 		if (request.enteredText == '') {
 			alert('Please enter text to block!');
-		} else if (request.enteredText.search(/[$-/:-?{-~!"^_`\[\]]/) != -1) { 
+		} else if (request.enteredText.search(/[$-/:-?{-~!"^_`\[\]]/) != -1) {
 			alert('Please enter words without punctuation!');
-		}else {
+		} else {
 			hideText(request.enteredText);
 		}
 		sendResponse({
